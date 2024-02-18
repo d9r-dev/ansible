@@ -10,13 +10,13 @@ RUN apt-get update && \
     apt-get clean autoclean && \
     apt-get autoremove --yes
 
-FROM base AS prime
+FROM base AS d9r
 ARG TAGS
 RUN addgroup --gid 1000 d9r 
 RUN adduser --gecos d9r --uid 1000 --gid 1000 --disabled-password d9r
 USER d9r
 WORKDIR /home/d9r
 
-FROM prime
+FROM d9r
 COPY . .
 CMD ["sh", "-c", "ansible-playbook $TAGS local.yml"]
