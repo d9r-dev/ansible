@@ -18,11 +18,11 @@
     scope: global
     value: "d.kraemer@dotsource.de"
   tags:
-    - git-netflix
+    - git-dotsource
 - name: Git personal setup name
   git_config:
     name: user.name
     scope: global
     value: "Danny Krämer"
   tags:
-    - git-netflix
+    - git-dotsource
